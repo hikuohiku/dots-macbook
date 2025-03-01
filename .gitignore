@@ -1,0 +1,8 @@
+alacritty
+direnv/lib
+fish
+git
+kitty
+raycast/extensions
+nvim
+zellij/config.kdl.bak*
