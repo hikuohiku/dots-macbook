@@ -1,8 +1,9 @@
 core:
-  trash_dir: /Users/hikuo/.gomi
   restore:
     verbose: true
     confirm: true
+trash:
+  gomi_dir: /Users/hikuo/.gomi
 ui:
   density: spacious
   style:
