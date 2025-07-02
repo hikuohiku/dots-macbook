@@ -1,0 +1,2 @@
+[global]
+log_filter="^[^e]|^e[^x]|^ex[^p]|^exp[^o]|^expo[^r]|^expor[^t]"
