@@ -5,6 +5,37 @@
             "complex_modifications": {
                 "rules": [
                     {
+                        "manipulators": [
+                            {
+                                "description": "Change caps_lock to left_control.",
+                                "from": {
+                                    "key_code": "caps_lock",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "left_control"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "description": "Change left_control to hyper key (command+control+option+shift).",
+                                "from": {
+                                    "key_code": "left_control",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "left_shift",
+                                        "modifiers": ["left_command", "left_control", "left_option"]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
                         "description": "⌘Qを2連打したときのみアプリが閉じるようにする",
                         "manipulators": [
                             {
@@ -147,6 +178,7 @@
             },
             "name": "Default profile",
             "selected": true,
+            "simple_modifications": [],
             "virtual_hid_keyboard": { "keyboard_type_v2": "ansi" }
         }
     ]
