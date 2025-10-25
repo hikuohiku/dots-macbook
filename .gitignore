@@ -13,3 +13,6 @@ btop
 raycast/config.json
 nix/nix.conf
 skhd/skhdrc
+karabiner/assets/complex_modifications
+karabiner/automatic_backups
+zellij/config.kdl
