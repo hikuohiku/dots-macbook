@@ -7,22 +7,60 @@
                     {
                         "manipulators": [
                             {
-                                "description": "Change caps_lock to left_control.",
+                                "conditions": [
+                                    {
+                                        "identifiers": [{ "is_built_in_keyboard": true }],
+                                        "type": "device_if"
+                                    }
+                                ],
+                                "description": "Change caps_lock to left_control (built-in keyboard only).",
                                 "from": {
                                     "key_code": "caps_lock",
                                     "modifiers": { "optional": ["any"] }
                                 },
-                                "to": [
-                                    {
-                                        "key_code": "left_control"
-                                    }
-                                ],
+                                "to": [{ "key_code": "left_control" }],
                                 "type": "basic"
                             },
                             {
-                                "description": "Change left_control to hyper key (command+control+option+shift).",
+                                "conditions": [
+                                    {
+                                        "identifiers": [{ "is_built_in_keyboard": true }],
+                                        "type": "device_if"
+                                    }
+                                ],
+                                "description": "Change left_control to hyper key (built-in keyboard only).",
                                 "from": {
                                     "key_code": "left_control",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "left_shift",
+                                        "modifiers": ["left_command", "left_control", "left_option"]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "HHKB: Change right_option to hyper key",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "identifiers": [
+                                            {
+                                                "product_id": 33,
+                                                "vendor_id": 1278
+                                            }
+                                        ],
+                                        "type": "device_if"
+                                    }
+                                ],
+                                "description": "Change right_option to hyper key (HHKB only).",
+                                "from": {
+                                    "key_code": "right_option",
                                     "modifiers": { "optional": ["any"] }
                                 },
                                 "to": [
@@ -178,7 +216,6 @@
             },
             "name": "Default profile",
             "selected": true,
-            "simple_modifications": [],
             "virtual_hid_keyboard": { "keyboard_type_v2": "ansi" }
         }
     ]
